@@ -5,7 +5,7 @@
 #include <time.h>
 /* Se importan las bibliotecas*/
  
-void señales(int signum){ // funcion sin retorno llamada señales con el parametro signum
+void senales(int signum){ // funcion sin retorno llamada senales con el parametro signum
     if (signum == SIGUSR1){//condicion que verifica que la señal corresponda al proceso
 	time_t current_time; //se define funciones para almacenar la hora
 	char* c_time_string; 
@@ -18,7 +18,7 @@ void señales(int signum){ // funcion sin retorno llamada señales con el parame
 int main(){// funcion principal
 	while(True){//bucle infinito
 		printf("Listo para recibir la señal PID=%d\n", getpid());// se obtiene el id del proceso
-		signal(SIGUSR1, señales);//envia la señal
+		signal(SIGUSR1, senales);//envia la senal
 		sleep(5);//se hace un sleep de 5 segundos en pantalla
 	}
 }
